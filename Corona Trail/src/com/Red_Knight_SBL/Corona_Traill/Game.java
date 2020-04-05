@@ -11,18 +11,33 @@ import com.Red_Knight_SBL.Corona_Traill.state.State;
 
 public class Game implements Runnable{
 	
+	//making a Display object
+	
 	public Display display;
+	
+	//making int objects
 	
 	private int WIDTH, HEIGHT;
 	public int Time;
+	
+	//making String
+	
 	public String title;
+	
+	//making boolean
 
 	private boolean running = false;
 
+	//making Thread
+	
 	private Thread thread;
+	
+	//making graphics objects
 
 	private BufferStrategy bs;
 	private Graphics g;
+	
+	//making State objects
 	
 	private State introState;
 	
