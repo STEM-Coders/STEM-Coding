@@ -16,7 +16,7 @@ public class Animation {
 	}
 	
 	public void tick() {
-		timer += System.currentTimeMillis();
+		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
 		
 		if (timer >= frames.length) {
