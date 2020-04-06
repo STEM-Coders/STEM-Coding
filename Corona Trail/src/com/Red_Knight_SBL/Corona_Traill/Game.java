@@ -6,6 +6,7 @@ import com.Red_Knight_SBL.Corona_Traill.display.Display;
 import com.Red_Knight_SBL.Corona_Traill.gfx.Assets;
 import com.Red_Knight_SBL.Corona_Traill.input.KeyManager;
 import com.Red_Knight_SBL.Corona_Traill.input.MouseManager;
+import com.Red_Knight_SBL.Corona_Traill.state.GameState;
 import com.Red_Knight_SBL.Corona_Traill.state.IntroState;
 import com.Red_Knight_SBL.Corona_Traill.state.State;
 
@@ -40,6 +41,7 @@ public class Game implements Runnable{
 	//making State objects
 	
 	private State introState;
+	private State gameState;
 	
 	private KeyManager keyManager;
 	private MouseManager mouseManager;
@@ -70,6 +72,7 @@ public class Game implements Runnable{
 		//gameCamera = new GameCamera(handler, 0, 0);
 		
 		introState = new IntroState(handler);
+		gameState = new GameState(handler);
 		State.setState(introState);
 	}
 

@@ -2,9 +2,7 @@ package com.Red_Knight_SBL.Corona_Traill.display;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
-
 import javax.swing.JFrame;
-
 import com.Red_Knight_SBL.Corona_Traill.gfx.Assets;
 
 public class Display {
