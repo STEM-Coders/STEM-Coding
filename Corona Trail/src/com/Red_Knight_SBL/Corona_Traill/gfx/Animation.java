@@ -21,7 +21,7 @@ public class Animation {
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
 		
-		if (timer >= frames.length) {
+		if (timer >= speed) {
 			index++;
 			timer = 0;
 			if (index >= frames.length)
