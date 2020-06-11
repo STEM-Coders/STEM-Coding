@@ -2,6 +2,7 @@ package game.red_knight_SBL.burgershootdown;
 
 import game.red_knight_SBL.burgershootdown.gfx.GameCamera;
 import game.red_knight_SBL.burgershootdown.input.KeyManager;
+import game.red_knight_SBL.burgershootdown.input.MouseManager;
 import game.red_knight_SBL.burgershootdown.worlds.World;
 
 public class Handler {
@@ -23,6 +24,10 @@ public class Handler {
 	
 	public KeyManager getKeyManager() {
 		return game.getKeyManager();
+	}
+	
+	public MouseManager getMouseManager() {
+		return game.getMouseManager();
 	}
 	
 	public int getHeight() {

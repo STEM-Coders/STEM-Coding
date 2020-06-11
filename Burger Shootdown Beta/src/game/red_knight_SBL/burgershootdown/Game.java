@@ -6,6 +6,7 @@ import game.red_knight_SBL.burgershootdown.display.Display;
 import game.red_knight_SBL.burgershootdown.gfx.Assets;
 import game.red_knight_SBL.burgershootdown.gfx.GameCamera;
 import game.red_knight_SBL.burgershootdown.input.KeyManager;
+import game.red_knight_SBL.burgershootdown.input.MouseManager;
 import game.red_knight_SBL.burgershootdown.state.GameState;
 import game.red_knight_SBL.burgershootdown.state.IntroState;
 import game.red_knight_SBL.burgershootdown.state.MenuState;
@@ -26,12 +27,16 @@ public class Game implements Runnable{
 	private BufferStrategy bs;
 	private Graphics g;
 	
+	// States
 	private State gameState;
 	private State introState;
 	private State menuState;
 	
+	// Input
 	private KeyManager keyManager;
+	private MouseManager mouseManager;
 	
+	// Game Camera
 	private GameCamera gameCamera;
 	
 	private Handler handler;
@@ -41,12 +46,17 @@ public class Game implements Runnable{
 		this.WIDTH = WIDTH;
 		this.HEIGHT = HEIGHT;
 		keyManager = new KeyManager();
+		mouseManager = new MouseManager();
 
 	}
 
 	private void init() {
 		display = new Display(title, WIDTH, HEIGHT);
 		display.getFrame().addKeyListener(keyManager);
+		display.getFrame().addMouseListener(mouseManager);
+		display.getFrame().addMouseMotionListener(mouseManager);
+		display.getCanvas().addMouseListener(mouseManager);
+		display.getCanvas().addMouseMotionListener(mouseManager);
 		Assets.init();
 		
 		handler = new Handler(this);
@@ -135,6 +145,10 @@ public class Game implements Runnable{
 
 	public KeyManager getKeyManager() {
 		return keyManager;
+	}
+	
+	public MouseManager getMouseManager() {
+		return mouseManager;
 	}
 	
 	public GameCamera getGameCamera() {

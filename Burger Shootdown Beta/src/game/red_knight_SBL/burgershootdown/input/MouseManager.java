@@ -27,6 +27,14 @@ public class MouseManager implements MouseListener, MouseMotionListener {
 		return centerPressed;
 	}
 	
+	public int getMouseX() {
+		return mouseX;
+	}
+	
+	public int getMouseY() {
+		return mouseY;
+	}
+	
 	// Implemented methods
 
 	@Override
