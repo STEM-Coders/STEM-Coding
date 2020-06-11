@@ -27,7 +27,8 @@ public class World {
 	}
 
 	public void tick() {
-		entityManager.tick();
+		if (handler.getKeyManager().pauseMenu == false)
+			entityManager.tick();
 
 	}
 
@@ -45,6 +46,7 @@ public class World {
 						(int) (y * Tile.TILE_HEIGHT - handler.getGameCamera().getyOffset()));
 			}
 		}
+		
 		entityManager.render(g);
 	}
 
