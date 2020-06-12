@@ -16,6 +16,7 @@ public class NetworkManager implements Runnable {
 	private ObjectOutputStream out;
 	private ObjectInputStream in;
 	private boolean running = false;
+	private NetworkEventListener eventListener; 
 
 	public NetworkManager(String host, int port) {
 		this.host = host;
