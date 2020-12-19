@@ -16,7 +16,10 @@ public class MenuState extends State{
 	
 	public void tick() {
 		
-		button(795, 1068, 345, 430);
+		if(button(795, 1068, 345, 430))
+		{
+			startGame();
+		}
 		
 	}
 	
@@ -28,12 +31,14 @@ public class MenuState extends State{
 		State.setState(game.gameState);
 	}
 	
-	private void button(int xMin, int xMax, int yMin, int yMax) {
+	private boolean button(int xMin, int xMax, int yMin, int yMax) {
 		
 		if (handler.getMouseManager().getMouseX() >= xMin && handler.getMouseManager().getMouseY() >= yMin && handler.getMouseManager().getMouseX() <= xMax && handler.getMouseManager().getMouseY() <= yMax && handler.getMouseManager().isLeftPressed())
 		{
-			
+			return true;
 		}
+		
+		return false;
 		
 	}
 
