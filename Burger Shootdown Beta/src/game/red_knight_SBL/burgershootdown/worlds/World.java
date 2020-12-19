@@ -1,7 +1,6 @@
 package game.red_knight_SBL.burgershootdown.worlds;
 
 import java.awt.Graphics;
-import game.red_knight_SBL.burgershootdown.Game;
 import game.red_knight_SBL.burgershootdown.Handler;
 import game.red_knight_SBL.burgershootdown.entity.EntityManager;
 import game.red_knight_SBL.burgershootdown.entity.ai.AI;

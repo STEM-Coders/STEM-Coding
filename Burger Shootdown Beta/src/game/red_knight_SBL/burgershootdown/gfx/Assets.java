@@ -25,7 +25,7 @@ public class Assets {
 		ai_walk[1] = sheet.crop(1366, height * 9, width, height);
 		ai_walk[2] = sheet.crop(1366, height * 10, width, height);
 		ai_walk[3] = sheet.crop(1366, height * 11, width, height);
-		mainMenu = sheet.crop(0, 0, 1366, 768);
+		mainMenu = ImageLoader.loadImage("/textures/UI.png");
 		dirt = sheet.crop(1366, 0, width, height);
 		grass = sheet.crop(1366, height, width, height);
 		rock = sheet.crop(1366, height * 2, width, height);
