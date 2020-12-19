@@ -16,10 +16,8 @@ public class MenuState extends State{
 		if(button(795, 1068, 345, 430))
 			startGame();
 		
-		//if(button(795, 1068, 345, 430))
-		//{
-		//	game.stop();
-		//}
+		if(button(799, 1150, 483, 558))
+			System.exit(0);
 		
 	}
 	
