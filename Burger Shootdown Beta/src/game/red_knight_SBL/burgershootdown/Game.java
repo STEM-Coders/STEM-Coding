@@ -123,7 +123,7 @@ public class Game implements Runnable{
 			}
 			
 			if (timer >= 1000000000) {
-				//System.out.println("Frames: " + tick);
+				System.out.println("Frames: " + tick);
 				tick = 0;
 				timer = 0;
 				Time++;
