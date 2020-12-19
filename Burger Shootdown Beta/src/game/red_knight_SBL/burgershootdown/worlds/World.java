@@ -16,7 +16,6 @@ public class World {
 	private int spawnX, spawnY;
 	private int[][] tiles;
 	private EntityManager entityManager;
-	private AI ai;
 
 	public World(Handler handler, String path) {
 		this.handler = handler;
