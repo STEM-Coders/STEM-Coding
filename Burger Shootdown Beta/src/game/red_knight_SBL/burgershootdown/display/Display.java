@@ -4,8 +4,6 @@ import java.awt.Canvas;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
-import game.red_knight_SBL.burgershootdown.gfx.Assets;
-
 public class Display {
 	
 	public JFrame window;
