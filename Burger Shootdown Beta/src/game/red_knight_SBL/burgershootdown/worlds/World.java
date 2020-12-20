@@ -24,6 +24,10 @@ public class World {
 		entityManager.getPlayer().setY(spawnY);
 	}
 
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
 	public void tick() {
 		if (handler.getKeyManager().pauseMenu == false)
 			entityManager.tick();

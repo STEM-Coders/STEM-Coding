@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import game.red_knight_SBL.burgershootdown.Handler;
 import game.red_knight_SBL.burgershootdown.entity.ai.AI;
 import game.red_knight_SBL.burgershootdown.entity.creatures.Player;
-import game.red_knight_SBL.burgershootdown.input.KeyManager;
 
 public class EntityManager {
 
@@ -21,34 +20,25 @@ public class EntityManager {
 		// bullet = new Bullets();
 		this.handler = handler;
 		entities = new ArrayList<Entity>();
-
+		addEntity(player);
+		addEntity(ai);
 	}
 
 	public void tick() {
 		for (int i = 0; i < entities.size(); i++) {
 			Entity e = entities.get(i);
 		}
-
-		player.tick();
-		// while (shooting) {
-		// bullet.tick();
-		// }
-		if (!AI.hit)
-			ai.tick();
+		
+		for (Entity e : entities)
+		{
+			e.tick();
+		}
 	}
 
 	public void render(Graphics g) {
 		for (Entity e : entities) {
 			e.render(g);
-
 		}
-
-		player.render(g);
-		// while (shooting) {
-		// bullet.render(g);
-		// }
-		if (!AI.hit)
-			ai.render(g);
 	}
 
 	public AI getAi() {

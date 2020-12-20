@@ -21,6 +21,20 @@ protected Rectangle bounds;
 		bounds = new Rectangle(0, 0, WIDTH, HEIGHT);
 	}
 	
+	public boolean checkEntityCollisions(){
+		for(Entity e : handler.getWorld().getEntityManager().getEntities()){
+			if(e.equals(this))
+				continue;
+			if(e.getCollisionBounds().intersects(getCollisionBounds()))
+				return true;
+		}
+		return false;
+	}
+	
+	public Rectangle getCollisionBounds(){
+		return new Rectangle((int) (x + bounds.x), (int) (y + bounds.y), bounds.width, bounds.height);
+	}
+	
 	public float getX() {
 		return x;
 	}

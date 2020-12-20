@@ -2,7 +2,6 @@ package game.red_knight_SBL.burgershootdown.entity.creatures;
 
 import game.red_knight_SBL.burgershootdown.Handler;
 import game.red_knight_SBL.burgershootdown.entity.Entity;
-import game.red_knight_SBL.burgershootdown.tiles.Tile;
 
 public abstract class Creatures extends Entity {
 

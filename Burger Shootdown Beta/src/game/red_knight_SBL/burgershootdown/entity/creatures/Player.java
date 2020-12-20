@@ -3,7 +3,6 @@ package game.red_knight_SBL.burgershootdown.entity.creatures;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import game.red_knight_SBL.burgershootdown.Handler;
-import game.red_knight_SBL.burgershootdown.entity.Bullets;
 import game.red_knight_SBL.burgershootdown.gfx.Animation;
 import game.red_knight_SBL.burgershootdown.gfx.Assets;
 import game.red_knight_SBL.burgershootdown.tiles.Tile;
@@ -30,6 +29,8 @@ public class Player extends Creatures {
 	}
 
 	public void tick() {
+		if (checkEntityCollisions())
+			System.out.println("Ai hit");
 		anim.tick();
 		getInput();
 		handler.getGameCamera().centerOnEntity(this);

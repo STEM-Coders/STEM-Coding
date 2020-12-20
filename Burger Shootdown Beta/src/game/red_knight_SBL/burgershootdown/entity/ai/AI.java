@@ -7,7 +7,6 @@ import game.red_knight_SBL.burgershootdown.entity.creatures.Creatures;
 import game.red_knight_SBL.burgershootdown.entity.creatures.Player;
 import game.red_knight_SBL.burgershootdown.gfx.Animation;
 import game.red_knight_SBL.burgershootdown.gfx.Assets;
-import game.red_knight_SBL.burgershootdown.tiles.Tile;
 
 public class AI extends Creatures {
 
