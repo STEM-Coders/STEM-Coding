@@ -10,18 +10,15 @@ public class EntityManager {
 
 	private Handler handler;
 	private Player player;
-	private AI ai;
 	private ArrayList<Entity> entities;
 	// private boolean shooting = true;
 
-	public EntityManager(Handler handler, Player player, AI ai) {
+	public EntityManager(Handler handler, Player player) {
 		this.player = player;
-		this.ai = ai;
 		// bullet = new Bullets();
 		this.handler = handler;
 		entities = new ArrayList<Entity>();
 		addEntity(player);
-		addEntity(ai);
 	}
 
 	public void tick() {
@@ -39,14 +36,6 @@ public class EntityManager {
 		for (Entity e : entities) {
 			e.render(g);
 		}
-	}
-
-	public AI getAi() {
-		return ai;
-	}
-
-	public void setAi(AI ai) {
-		this.ai = ai;
 	}
 
 	public void addEntity(Entity e) {

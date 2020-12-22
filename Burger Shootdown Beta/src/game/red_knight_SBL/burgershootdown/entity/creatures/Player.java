@@ -3,6 +3,7 @@ package game.red_knight_SBL.burgershootdown.entity.creatures;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import game.red_knight_SBL.burgershootdown.Handler;
+import game.red_knight_SBL.burgershootdown.entity.Entity;
 import game.red_knight_SBL.burgershootdown.gfx.Animation;
 import game.red_knight_SBL.burgershootdown.gfx.Assets;
 import game.red_knight_SBL.burgershootdown.tiles.Tile;
@@ -10,8 +11,7 @@ import game.red_knight_SBL.burgershootdown.tiles.Tile;
 public class Player extends Creatures {
 
 	private Animation anim;
-	public static float x;
-	public static float y;
+	public float x, y;
 	private boolean walk;
 
 	public Player(Handler handler, float x, float y) {
@@ -29,8 +29,6 @@ public class Player extends Creatures {
 	}
 
 	public void tick() {
-		if (checkEntityCollisions())
-			System.out.println("Ai hit");
 		anim.tick();
 		getInput();
 		handler.getGameCamera().centerOnEntity(this);
@@ -41,7 +39,7 @@ public class Player extends Creatures {
 	}
 
 	public void setX(float x) {
-		Player.x = x;
+		this.x = x;
 	}
 
 	public float getY() {
@@ -49,7 +47,7 @@ public class Player extends Creatures {
 	}
 
 	public void setY(float y) {
-		Player.y = y;
+		this.y = y;
 	}
 
 	private void getInput() {
@@ -116,8 +114,8 @@ public class Player extends Creatures {
 	}
 
 	public void render(Graphics g) {
-		g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()),
-				(int) (y - handler.getGameCamera().getyOffset()), WIDTH, HEIGHT, null);
+		g.drawImage(getCurrentAnimationFrame(), (int) (this.x - handler.getGameCamera().getxOffset()),
+				(int) (this.y - handler.getGameCamera().getyOffset()), WIDTH, HEIGHT, null);
 		walk = false;
 	}
 

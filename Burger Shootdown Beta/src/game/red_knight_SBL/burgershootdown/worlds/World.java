@@ -1,5 +1,6 @@
 package game.red_knight_SBL.burgershootdown.worlds;
 
+import java.awt.Font;
 import java.awt.Graphics;
 import game.red_knight_SBL.burgershootdown.Handler;
 import game.red_knight_SBL.burgershootdown.entity.EntityManager;
@@ -15,10 +16,14 @@ public class World {
 	private int spawnX, spawnY;
 	private int[][] tiles;
 	private EntityManager entityManager;
+	
+
+	public int score = 0;
+	private long prevTime, timeNow, timer = 0;
 
 	public World(Handler handler, String path) {
 		this.handler = handler;
-		entityManager = new EntityManager(handler, new Player(handler, 100, 200), new AI(handler, 500, 400));
+		entityManager = new EntityManager(handler, new Player(handler, 100, 200));
 		loadWorld(path);
 		entityManager.getPlayer().setX(spawnX);
 		entityManager.getPlayer().setY(spawnY);
@@ -29,6 +34,15 @@ public class World {
 	}
 
 	public void tick() {
+		timer += timeNow - prevTime;
+		prevTime = timeNow;
+		
+		if (timer >= 1000000000)
+		{
+			timer = 0;
+			score += 1;
+		}
+		timeNow = System.nanoTime();
 		if (handler.getKeyManager().pauseMenu == false)
 			entityManager.tick();
 
@@ -50,6 +64,17 @@ public class World {
 		}
 		
 		entityManager.render(g);
+
+		g.setFont(new Font("Arial", Font.PLAIN, 40));
+		g.drawString(Long.toString(score), handler.getGame().getWidth() - 80, handler.getGame().getHeight() - 80);
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 	public Tile getTile(int x, int y) {

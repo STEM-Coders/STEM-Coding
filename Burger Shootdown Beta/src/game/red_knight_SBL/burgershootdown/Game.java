@@ -134,10 +134,6 @@ public class Game implements Runnable{
 		stop();
 
 	}
-	
-	public int getTime() {
-		return Time;
-	}
 
 	public void setTime(int time) {
 		Time = time;
